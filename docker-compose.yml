@@ -1,4 +1,4 @@
-version: "3.9"
+# version: "3.9"
 
 services:
   db:
@@ -15,18 +15,19 @@ services:
       - db_data:/var/lib/postgresql/data
 
   backend:
-    build: .
+    build:
+      context: ./backend
     container_name: splitwise_api
     restart: always
     env_file:
-      - .env
+      - ./backend/.env  # ✅ Better to be explicit with path
     ports:
       - "8000:8000"
     depends_on:
       - db
     volumes:
-      - ./app:/app/app
-
+      - ./backend:/app  # ✅ Good: this matches your Dockerfile's WORKDIR
+    working_dir: /app/app  # ✅ Optional: only if your FastAPI code is in /backend/app/
 
 volumes:
   db_data:
