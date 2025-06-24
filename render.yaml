@@ -1,0 +1,18 @@
+databases:
+  - name: splitwise-db
+    databaseName: splitwise_clone
+    user: postgres
+
+services:
+  - type: web
+    name: splitwise-backend
+    runtime: docker
+    repo: https://github.com/Akhs77/splitwise-clone
+    dockerfilePath: backend/Dockerfile
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: splitwise-db
+          property: connectionString
+      - key: OPENAI_API_KEY
+        sync: false
