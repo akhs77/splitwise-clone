@@ -26,7 +26,7 @@ frontend/dist/
 .DS_Store
 Thumbs.db
 
-
+venv/
 DATABASE_URL=postgresql://postgres:Akhila%4013@db:5432/splitwise_clone
 # DATABASE_URL=postgresql://postgres:Akhila%4013@localhost:5432/splitwise_clone
 # OPENAI_API_KEY=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
