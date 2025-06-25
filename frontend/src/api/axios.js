@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000', // FastAPI server URL
+  baseURL: "https://splitwise-zv50.onrender.com", // FastAPI server URL
 });
 
 export default api;
+
+// 'http://localhost:8000'
