@@ -25,7 +25,10 @@ app = FastAPI(
 # ✅ Add CORS middleware BEFORE routers
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://splitwise-clone-three.vercel.app/"],
+    allow_origins=[
+        "http://localhost:5173",  # for local dev (optional)
+        "https://splitwise-clone-three.vercel.app"  # ✅ no trailing slash!
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
