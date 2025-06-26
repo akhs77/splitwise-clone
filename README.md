@@ -53,13 +53,13 @@ A full-stack **Splitwise-inspired expense sharing app** built with **FastAPI**, 
 
 
 ### Add Expenses
-![Add Expenses](./screenshots/Add-expenses.png)
+![Add Expenses](./screenshots/Add-expense.png)
 
 ### 📊 View Balances
-![Balances](./screenshots/balances.png)
+![Balances](./screenshots/Balances.png)
 
 ### 📊 User Balances
-![My Balances](./screenshots/My-balances.png)
+![My Balances](./screenshots/My-balance.png)
 
 ## 🛠️ Setup Instructions
 
