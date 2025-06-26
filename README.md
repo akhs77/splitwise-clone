@@ -1,52 +1,92 @@
-# 💸 Splitwise Clone – Neurix Assignment
+# 💸 Splitwise Clone 
 
-A simplified clone of Splitwise built as part of the Neurix Full-Stack SDE Intern application. This app allows you to create groups, split expenses (equally or by percentage), and track balances between users.
-
----
-
-## 🚀 Tech Stack
-
-- **Backend:** FastAPI + SQLAlchemy + PostgreSQL
-- **Frontend:** React + TailwindCSS
-- **Database:** PostgreSQL
-- **Extras:** Docker, OpenAI API (optional chatbot)
+A full-stack **Splitwise-inspired expense sharing app** built with **FastAPI**, **React**, **PostgreSQL**, **Docker**, and **TailwindCSS**. Users can create groups, add expenses, view balances, and even chat with an AI assistant 🤖.
 
 ---
 
-## 📦 Features
+## 🚀 Live Demo
 
-### ✅ Core
+- 🖥️ Frontend: [https://splitwise-clone-three.vercel.app](https://splitwise-clone-three.vercel.app)
+- 🔧 Backend API (Swagger UI): [https://splitwise-zv50.onrender.com/docs](https://splitwise-zv50.onrender.com/docs)
 
-- Create groups with multiple users
-- Add expenses to a group:
-  - Equal split
-  - Percentage-based split
-- Track who owes whom within a group
-- View personal balances across all groups
 
-### 💬 Bonus
+---
 
-- **LLM-powered chatbot** that answers natural queries like:
-  - “How much does Alice owe in Goa Trip?”
-  - “Show my last 3 expenses”
-  - “Who paid the most in Weekend Trip?”
+## 📦 Tech Stack
+
+### ⚙️ Backend
+- [FastAPI](https://fastapi.tiangolo.com/) – Python web framework
+- [PostgreSQL](https://www.postgresql.org/) – Relational database
+- [Docker](https://www.docker.com/) + Docker Compose – Containerization
+- `uvicorn` – ASGI server
+- `.env` for secrets
+
+### 🎨 Frontend
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Axios](https://axios-http.com/) – HTTP requests
+- `react-router-dom` – Routing
+
+### ☁️ Deployment
+- Frontend: **Vercel**
+- Backend: **Render (Dockerized)**
+
+---
+
+## 🧩 Features
+
+- ✅ Create users dynamically
+- ✅ Create groups with selected users
+- ✅ Add expenses and automatically split them
+- ✅ View group-wise balances (who owes whom)
+- ✅ View personal balances (across all groups)
+- ✅ 💬 Bonus: Chatbot powered by OpenAI *(temporarily disabled)*
+- ✅ Fully containerized backend with Docker Compose
+- ✅ Deployed and production-ready
 
 ---
 
 
-## 🐳 Quick Start (Docker)
+
+### 🧾 Create Group
+![Create Group](./screenshots/create-group.png)
+
+
+### Add Expenses
+![Add Expenses](./screenshots/Add-expenses.png)
+
+### 📊 View Balances
+![Balances](./screenshots/balances.png)
+
+### 📊 User Balances
+![My Balances](./screenshots/My-balances.png)
+
+## 🛠️ Setup Instructions
+
+### 🔧 Backend (FastAPI + PostgreSQL)
 
 ```bash
-git clone https://github.com/Akhs77/splitwise-clone.git
-cd splitwise-clone
+cd backend
 
-# Copy and edit the .env file
-cp backend/.env.example backend/.env
-# Add your OpenAI key inside backend/.env
+# 1. Create .env file
+touch .env
+# Add this inside:
+DATABASE_URL=postgresql://postgres:<password>@db:5432/postgres
 
-# Start full stack
+# 2. Build and run with Docker
 docker-compose up --build
 
-Backend: http://localhost:8000/docs (For Full Swagger docs)
+🎨 Frontend (React + TailwindCSS)
 
-Frontend: http://localhost:5173
+cd frontend
+
+# 1. Install dependencies
+npm install
+
+# 2. Start the dev server
+npm run dev
+
+
+👤 Author
+Akhila K C
+GitHub: @akhs77
